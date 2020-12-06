@@ -13,11 +13,11 @@ protocol SegmentViewControllerDelegate: class{
 
 class SegmentViewController: UIViewController {
 
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    
-    weak var delegate : SegmentViewControllerDelegate?
     
     @IBOutlet weak var output: UILabel!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    weak var delegate : SegmentViewControllerDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,12 @@ class SegmentViewController: UIViewController {
     }
     
     @IBAction func segSwitch(_ sender: Any) {
-        
+        switch segmentControl.selectedSegmentIndex{
+        case 0: output.text = "High"
+        case 1: output.text = "low"
+        default:
+            output.text = "loading"
+        }
     }
     @IBAction func save(_ sender: Any) {
     }

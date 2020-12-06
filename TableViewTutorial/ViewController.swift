@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SegmentViewControllerDelegate {
 
     let defaults = UserDefaults.standard
   @IBOutlet weak var todoListTableView: UITableView!
     let value = "test"
-  private var TheControls = ["Switch:               true","Slider:               true","Segmented Control:     true","TextField:               true","Stepper:               true"]
+  private var TheControls = ["Switch:               true","Segmented Control:      true","Slider:     true","TextField:               true","Stepper:               true"]
     
     private var controlValues = ["off"]
   override func viewDidLoad() {
@@ -47,23 +47,20 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let showVC = storyboard.instantiateViewController(withIdentifier: "ShowViewController") as! ShowViewController
-    let values = controlValues[indexPath.row]
-    showVC.results = values
-    showVC.delegate = self
-    self.navigationController?.pushViewController(showVC, animated: true)
+    if indexPath.row == 0{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let showVC = storyboard.instantiateViewController(withIdentifier: "ShowViewController") as! ShowViewController
+        let values = showVC.results
+        showVC.results = values
+        showVC.delegate = self
+        self.navigationController?.pushViewController(showVC, animated: true)
+    }else if indexPath.row == 1{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let segmentVC = storyboard.instantiateViewController(withIdentifier: "SegmentViewController") as! SegmentViewController
+                segmentVC.delegate = self
+                self.navigationController?.pushViewController(segmentVC, animated: true)
+    }
     
-    
-    //    if(indexPath.row == 0){
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let segmentVC = storyboard.instantiateViewController(withIdentifier: "SegmentViewController") as! SegmentViewController
-//    //    showVC.delegate = self
-//        self.navigationController?.pushViewController(segmentVC, animated: true)
-//    }else if(indexPath.row == 1){
-//
-//
-//        }
     }
   }
     

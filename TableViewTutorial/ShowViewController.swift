@@ -34,9 +34,9 @@ class ShowViewController: UIViewController {
         
     }
     @IBAction func save(_ sender: Any) {
-        
+        results = settingsState.text
         self.delegate?.save(self.newValue ?? "Switch:           true")
-        self.delegate?.keep(self.results ?? "off")
+        self.delegate?.keep(self.results!)
         self.navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
