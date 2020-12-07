@@ -8,26 +8,27 @@
 import UIKit
 
 protocol TextFieldViewControllerDelegate: class{
-    func updateText(with newText: String)
+    func save(_ value: String)
 }
 class TextFieldViewController: UIViewController {
 
     
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var editText: UITextField!
-    var editLabel: String?
     weak var delegate: TextFieldViewControllerDelegate?
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.status?.text = self.editLabel
+    
     }
     
 
     @IBAction func save(_ sender: Any) {
-        self.delegate?.updateText(with: self.editText.text ?? "default")
+        guard var currentStats = editText.text else { return }
+        self.delegate?.save(currentStats)
                 self.navigationController?.popViewController(animated: true)
     }
     

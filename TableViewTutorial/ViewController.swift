@@ -7,16 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, SegmentViewControllerDelegate, SliderViewControllerDelegate, TextFieldViewControllerDelegate {
+class ViewController: UIViewController, SegmentViewControllerDelegate, SliderViewControllerDelegate, TextFieldViewControllerDelegate, StepperViewControllerDelegate {
     func updateText(with newText: String) {
         let textSelectedIndex = self.todoListTableView.indexPathForSelectedRow?.row
                 self.values[textSelectedIndex ?? 2] = newText
                 self.todoListTableView.reloadData()
     }
-    
-    
-    
-
     let defaults = UserDefaults.standard
   @IBOutlet weak var todoListTableView: UITableView!
     let value = "test"
@@ -81,6 +77,12 @@ extension ViewController: UITableViewDelegate {
        
                 self.navigationController?.pushViewController(TextVC, animated: true)
         
+    }else if indexPath.row == 4{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let stepVC = storyboard.instantiateViewController(withIdentifier: "StepperViewController") as! StepperViewController
+        stepVC.delegate = self
+       
+                self.navigationController?.pushViewController(stepVC, animated: true)
     }
     
     }
