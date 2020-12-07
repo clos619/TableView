@@ -16,7 +16,9 @@
 		04789D4025754C2B00F82E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04789D3E25754C2B00F82E82 /* LaunchScreen.storyboard */; };
 		04789D4925754FFF00F82E82 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789D4825754FFF00F82E82 /* TableViewCell.swift */; };
 		04A1EDAC2575580400971FA0 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1EDAB2575580400971FA0 /* AddTodoViewController.swift */; };
+		3A5914DB257D942100650ED8 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5914DA257D942100650ED8 /* SliderViewController.swift */; };
 		3A5EF286257752B00017CA7C /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5EF285257752B00017CA7C /* ShowViewController.swift */; };
+		3A7242F4257DBB59003EECEE /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7242F3257DBB59003EECEE /* TextFieldViewController.swift */; };
 		3A8D1DEE2577EB6300851051 /* SegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1DED2577EB6300851051 /* SegmentViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +34,9 @@
 		04789D4125754C2B00F82E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04789D4825754FFF00F82E82 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		04A1EDAB2575580400971FA0 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
+		3A5914DA257D942100650ED8 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		3A5EF285257752B00017CA7C /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		3A7242F3257DBB59003EECEE /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		3A8D1DED2577EB6300851051 /* SegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,8 @@
 				0456DED125768D240039104A /* TableViewCell.xib */,
 				3A5EF285257752B00017CA7C /* ShowViewController.swift */,
 				3A8D1DED2577EB6300851051 /* SegmentViewController.swift */,
+				3A5914DA257D942100650ED8 /* SliderViewController.swift */,
+				3A7242F3257DBB59003EECEE /* TextFieldViewController.swift */,
 			);
 			path = TableViewTutorial;
 			sourceTree = "<group>";
@@ -160,6 +166,8 @@
 				04789D4925754FFF00F82E82 /* TableViewCell.swift in Sources */,
 				04789D3425754C2800F82E82 /* AppDelegate.swift in Sources */,
 				04789D3625754C2800F82E82 /* SceneDelegate.swift in Sources */,
+				3A5914DB257D942100650ED8 /* SliderViewController.swift in Sources */,
+				3A7242F4257DBB59003EECEE /* TextFieldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

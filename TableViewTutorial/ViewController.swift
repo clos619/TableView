@@ -7,11 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, SegmentViewControllerDelegate {
+class ViewController: UIViewController, SegmentViewControllerDelegate, SliderViewControllerDelegate, TextFieldViewControllerDelegate {
+    func updateText(with newText: String) {
+        let textSelectedIndex = self.todoListTableView.indexPathForSelectedRow?.row
+                self.values[textSelectedIndex ?? 2] = newText
+                self.todoListTableView.reloadData()
+    }
+    
+    
+    
 
     let defaults = UserDefaults.standard
   @IBOutlet weak var todoListTableView: UITableView!
     let value = "test"
+    private var values: [Any] = ["0", "Hello", "Enter Text..", "0", "On"]
   private var TheControls = ["Switch:               true","Segmented Control:      true","Slider:     true","TextField:               true","Stepper:               true"]
     
     private var controlValues = ["off"]
@@ -59,6 +68,19 @@ extension ViewController: UITableViewDelegate {
                 let segmentVC = storyboard.instantiateViewController(withIdentifier: "SegmentViewController") as! SegmentViewController
                 segmentVC.delegate = self
                 self.navigationController?.pushViewController(segmentVC, animated: true)
+    }else if indexPath.row == 2{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let sliderVC = storyboard.instantiateViewController(withIdentifier: "SliderViewController") as! SliderViewController
+        sliderVC.delegate = self
+       
+                self.navigationController?.pushViewController(sliderVC, animated: true)
+    }else if indexPath.row == 3{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let TextVC = storyboard.instantiateViewController(withIdentifier: "TextFieldViewController") as! TextFieldViewController
+        TextVC.delegate = self
+       
+                self.navigationController?.pushViewController(TextVC, animated: true)
+        
     }
     
     }
@@ -81,32 +103,8 @@ extension ViewController: ShowViewControllerDelegate {
         self.TheControls[selectedIndex] = newValue
             self.todoListTableView.reloadData()
         }
-      
-//    self.TheControls[0] = saved
-//    self.todoListTableView.reloadData()
+
   }
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//self.TheControls.remove(at: indexPath.row)
-//tableView.reloadData()
-
-//    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//    let destination = storyboard.instantiateViewController(withIdentifier: "SwitchViewController") as! SwitchViewController
-//    navigationController?.pushViewController(destination, animated: true)
